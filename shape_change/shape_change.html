@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta content="text/html" charset="UTF-8">
+		<title>Shape Transformer</title>
+		<link rel="stylesheet" href="css/shape.css">
+		<script>
+			//function shapeTrans(elem,cls) {
+			//	elem.className = cls;
+			//}
+			window.onload = function(){
+				var btn = document.getElementsByTagName("input");
+				var shape = document.getElementsByClassName("shape")[0];
+				var clsCollection = ['square','rectangle','circle','oval','triangle','diamond','trapezium','parallelogram','star','hexagram','hexagon','heart','egg','infinity'];
+
+				for (let i=0, len=btn.length; i<len; i++){
+					//btn[i].index = i;
+					btn[i].onclick = function(){
+						shape.className = clsCollection[i];
+					}
+				} 
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+		  <h1>Shape Transformer</h1>
+			<input type="button" value="square" />
+			<input type="button" value="rectangle" />
+			<input type="button" value="circle" />
+			<input type="button" value="oval" />
+			<input type="button" value="triangle" />
+			<input type="button" value="diamond" />
+			<input type="button" value="trapezium" />
+			<input type="button" value="parallelogram" />
+			<input type="button" value="star" />
+			<input type="button" value="hexagram" />
+			<input type="button" value="hexagon" />
+			<input type="button" value="heart" />
+			<input type="button" value="egg" />
+			<input type="button" value="infinity" />  
+			<div id="inner" class="shape"></div>
+		</div>
+		
+	</body>
+</html>
