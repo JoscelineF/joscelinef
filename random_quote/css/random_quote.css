@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding:0;
+	list-style: none;
+  	vertical-align: baseline;
+}
+div {
+  position:relative;
+  z-index: 2;
+}
+body{
+	background: linear-gradient(to right, purple,aqua) ;
+  color: #333;
+	font-weight: 400;  
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.quote{
+	position: relative;
+	margin:7% auto auto auto;
+ 	width:450px;
+  padding:40px 50px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  opacity: 0.7;
+  display: table;
+  box-shadow: 0 0 20px 0 #777;
+  	}
+ i{
+      font-size:12px;
+      margin-right: 5px;
+    }
+ .quote-text {
+    text-align:center;
+    width: 450px;
+    height:auto;
+    clear:both;
+    font-weight:400;
+    font-size:25px;
+}
+.footer{
+	width: 450px;
+	text-align: center;
+	display: block;
+	margin:20px auto;
+	font-size: 12px;
+	color: #ccc;
+}
+.quote-author {
+    width:450px;
+    height:auto;
+    clear:both;
+    padding-top:20px;
+    font-size:16px; 
+    text-align:right;
+  }
+ .buttons {
+    width:450px;
+    margin:auto;
+    display:block;
+    }
+ .button {
+      height:38px;
+      border:none;
+      border-radius:3px;
+      color:#fff;
+      background:#555;
+      outline:none;
+      font-size:0.85em;
+      padding: 8px 18px;
+      margin-top:30px;
+      opacity:1;
+      cursor:pointer;
+  }
+  .button:hover {
+        opacity:0.8;
+      }
+   #tweet-quote, #tumblr-quote,#weibo-quote,#qq-quote{
+        float:left;
+        padding:0px;
+        padding-top:8px;
+        text-align:center;
+        font-size:1.2em;
+        margin-right:5px;
+        height:30px;
+        width:40px;
+      }
+#new-quote {
+        float:right;
+      }
