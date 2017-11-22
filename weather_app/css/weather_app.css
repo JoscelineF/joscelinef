@@ -1,0 +1,63 @@
+body{
+  color: #eee;
+  background:#222;
+  font-family: 'Varela Round', sans-serif;
+}
+header, footer {
+  margin: 30px auto;
+}
+h1{
+  font-size:50px;
+  letter-spacing:2px;
+}
+#status{
+  font-size:25px;
+  letter-spacing:1px;
+  line-height:40px;
+ }
+#temp-unit{
+  color:#6178d4;
+}
+#weather-icon{
+  display:block;
+  z-index:1;
+}
+#headIcon{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 10000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 10000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 10000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
