@@ -14,12 +14,14 @@ $(function() {
     rGradient = "linear-gradient(to right," + rColor1 + "," + rColor2 + ")";
     return [rGradient,rColor1,rColor2];
   }
+  // event handler
   $("#new-quote").on("click", function() {
     $("body").css("background", randomColor()[0]);
     //$(".button").css("background", randomColor()[2]);
     $("i,.button").css("color", randomColor()[1]);
-    getQuote();
+     getQuote();
   });
+
   var content="";
 	var author="";
 	var getQuote = function(){
@@ -39,7 +41,7 @@ $(function() {
   	});
 	}
   //end
-  getQuote();
+  // getQuote();
   $('#tweet-quote').on('click', function() {  window.open('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + content + '" ' + author));    
   });
   $('#tumblr-quote').on('click', function() {  window.open('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+encodeURIComponent(author)+'&content=' + encodeURIComponent(content)+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');    
