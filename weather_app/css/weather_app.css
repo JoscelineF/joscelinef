@@ -1,8 +1,8 @@
 body{
   color: #eee;
-  background: -moz-linear-gradient(left, rgba(31,16,165,1) 0%, rgba(170,99,183,1) 48%, rgba(31,16,165,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(31,16,165,1) 0%,rgba(170,99,183,1) 48%,rgba(31,16,165,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(left, rgba(31,16,165,1) 0%,rgba(170,99,183,1) 48%,rgba(31,16,165,1) 100%);  
+  background: -moz-linear-gradient(left, rgba(31,16,165,1) 0%, rgba(170,99,183,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(31,16,165,1) 0%,rgba(170,99,183,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(31,16,165,1) 0%,rgba(170,99,183,1) 100%);  
   font-family: 'Varela Round', sans-serif;
 }
 header, footer {
