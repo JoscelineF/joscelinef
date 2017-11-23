@@ -1,0 +1,43 @@
+body, .btn span{
+  background:#0F0F0F;
+  color:#8ab1e0;
+  font-family: 'Anonymous Pro', courier, monospace;  
+}
+h1{
+  font-weight:700;
+  margin: 30px auto 20px auto;
+  text-shadow: 0 0 30px #8ab1e0;
+}
+.jumbotron{
+  max-width:650px;
+  border:2px solid #8ab1e0;
+  box-shadow:0 0 5px 0 #8ab1e0;
+  background:#0F0F0F;
+  color:#8ab1e0;
+  font-family: 'Anonymous Pro', courier, monospace;  
+}
+.form-control, .btn{
+  background:#0F0F0F;
+  color:#8ab1e0;
+  border:1px solid #8ab1e0;
+  font-family: 'Anonymous Pro', courier, monospace;  
+  }
+.form-control:focus, .btn:hover{
+  background:#0F0F0F;
+  box-shadow:0 0 5px 0 #8ab1e0;
+}
+#randomBtn{
+  border-left:0;
+}
+#result,#results,#resultNum {
+  margin-top: 10px;
+}
+#results a{
+  color: #ccc;
+  margin-top: 10px;
+}
+hr{
+  height:1px;
+  border:none;
+  border-top:1px dashed #8ab1e0;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Wikipedia Viewer</title>
+  <link href='https://fonts.font.im/css?family=Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/wikipedia_viewer.css">
+
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+  <div class="text-center" id="wikiGraph"></div>
+  <h1 class="text-center">Wikipedia Viewer</h1>  
+  <div class="container jumbotron">
+    <div class="input-group text-center">
+     <input type="text" class="form-control" id="input" placeholder="Search Wikipedia"></input>
+      <span class="input-group-btn">
+      <button type="submit" class="btn btn-default" id="searchSubmit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+      <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" alt="random article"><button type="submit" class="btn btn-default" id="randomBtn">
+        <i class="fa fa-random" aria-hidden="true"><span>&nbsp;Random</span></i>
+        </button></a>
+     </span>
+    </div>
+  <div id="result">
+    <div id="resultNum"></div>
+    <div id="results"></div>
+  </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script  src="js/wikipedia_viewer.js"></script>
+
+</body>
+</html>
