@@ -1,0 +1,141 @@
+body{
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(100, 65, 165, 0.6), rgba(100, 65, 165, 0.6)), url('https://static.twitchcdn.net/assets/homepage_player_background-917af84661ea166012c8282e3ccb931a.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#ddd;  
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing:0.5px;
+}
+.row{
+  margin:0;
+}
+.header{  
+  letter-spacing:2px;
+  position:fixed;
+  z-index:2;
+  background-color:rgba(0,0,0,0.5);
+  width:100%;
+  top:0;
+  left:0;
+  padding:12px;
+}
+h1{
+  font-family: 'VT323','Orbitron', sans-serif;
+  font-size:80px;
+}
+.menu{
+  display:inline-block;
+  margin: 10px auto 0;
+  
+}
+.menu ul{
+  display:table; 
+  margin-bottom:0;
+  
+}
+.menu ul li{
+  background-color:#a31d81;
+  display:table-cell;
+  border-right: solid 2px #333;
+  padding:5px;
+  width:120px;
+  margin:0;
+  font-family: 'Orbitron', sans-serif;
+}
+.menu ul li:last-child{
+  border-right:0;
+}
+.selected{
+  font-weight:bold;
+  color:#eee;
+}
+.selected::before {    
+    transform: translateY(10px);    
+}
+.nav-text{
+  cursor: pointer;
+}
+.nav-text::before {
+  border-color: #a31d81 transparent transparent;
+}
+.channels{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items: flex-start;
+  margin-top:200px;
+}
+.card{
+  border-radius: 5px;
+  width:300px;
+  margin:15px 30px;
+  padding:20px 20px 5px;
+  text-align:center;
+  }
+.title{
+  display: inline-block;
+  border-radius:8px;
+  background-color:#ccc;
+  padding-right:10px;
+  margin-bottom: 15px;
+  color:#6a0958;
+  font-weight:bold;
+  font-size:12px;
+  font-family: 'Orbitron', sans-serif;
+}
+.title img{
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  margin-right:10px;
+}
+.card-desc{
+  font-size:15px;
+  padding:5px 2px;
+  font-weight:bold;
+}
+.online {
+  background-color: #BB63D4;
+  padding-top: 1em;
+  
+}
+
+.offline {
+  background-color: #46405C;
+  padding-top: 1em;
+ 
+}
+
+.info {
+  background-color: rgb(50, 50, 50);
+  background-color: rgba(50, 50, 50, 0.6);
+  border-radius: 15px;;
+  padding: 10px;
+  margin: 10px 0;
+  font-weight:normal;
+}
+.info p{
+  margin:5px;
+}
+.card-footer{
+  background-color: rgba(50, 50, 50, 0);
+  font-family: 'Orbitron', sans-serif;
+}
+.card-footer a{
+  color:#E7BA36;
+  font-weight:bold;
+}
+.error {
+  border: solid 2px red;
+  color: white;
+  font-size: 1.5em;
+  display: none;
+  padding: 5px;
+  margin-top: 10px;
+  width: 50%;
+}
+.footer{
+  margin:20px;
+}
