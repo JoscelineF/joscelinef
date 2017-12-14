@@ -12,25 +12,27 @@ body{
   border-radius: 5%;
   box-shadow: 5px 5px 15px 1px rgba(0,0,0,0.7);
   padding:25px;
+  box-sizing: border-box;
 }
 #display{
   background-color:rgba(0, 100, 50, 0.2);
   border: 2px solid #bbb;
-  border-radius: 8px;    
+  border-radius: 8px;  
+  margin-bottom: 20px;  
 }
 #entry{
-  margin: 0 5px;    
+  margin: 5px;    
 }
 #answer{
   font-size:50px;
-  margin-bottom: 10px;    
-  line-height:45px;
-  margin:0;
+ /* margin-bottom: 10px;    */
+  line-height:50px;
+  margin:5px;
 }
-#history{
+ /* #history{
   color: #888;
   font-size:16px;  
-  margin:0 2px 0 0; 
+  margin:0 2px 0 0; */
 }
 #buttons{
   width:275px;
@@ -45,22 +47,22 @@ button{
  background-color: #333;
  width:60px;
  height:50px;
- margin:4px 2px;
+ margin:4px 2.5px;
  border-radius:5px;
  border:none;
  box-shadow: 0px 4px 3px 0px #222, inset -1px -3px 15px 1px #555;
 }
-#equalBtn{
- width: 130px;  
-}
+/*#equalBtn{
+ width: 128px;  
+} */
 .red {  
   background-color: #a72d45;
   box-shadow: 0px 4px 3px 0px #671c2a; 
-  width: 95px;
+ /* width: 95px; */
 }
 .numBtn{
   background-color:#888;
-  box-shadow: 0px 4px 3px 0px #444, inset -1px -3px 10px 1px #999;
+  box-shadow: 0px 4px 3px 0px #444, inset -1px -3px 15px 1px #999;
 }
 .footer{
   margin:20px;
