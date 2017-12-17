@@ -1,208 +1,104 @@
+$(function(){
+	var num ="";
+	var num2 ="";
+	var operator ="";
+	var answer = $('#answer');
+	var eqBtn = false;
 
-$(document).ready(function() {
+	// clear button
+	$("[value='ac']").click(function(){
+		num ="";
+		num2 ="";
+		operator="";
+		answer.text("0");
+	});
 
-  var entry = '';
-  var answer = '';
-  var current = '';
-  var log = '';
-  var decimal = true;
-  var reset = '';
+	// delete button
+	$("[value='del']").click(function(){
+		if(num2.length>0){
+			num = num2;
+			num2 ="";
+			answer.text("0");
+		}else if(num2.length===0 && operator !==""){
+			operator = "";
+			answer.text("0");
+		}else{
+			num ="";
+			operator ="";
+			num2 ="";
+			answer.text("0"); // clear all
+		}		
+		//console.log("num: " + num);
+		//console.log("num2: " + num2);
+		//console.log("op: " + operator);
+	});
 
-  // round function 
-  function round(val) {
-    val = val.toString().split('');
-    if (val.indexOf('.') !== -1) {
-      var valTest = val.slice(val.indexOf('.') + 1, val.length);
-      val = val.slice(0, val.indexOf('.') + 1);
-      var i = 0;
-      while (valTest[i] < 1) {
-        i++
-      }
-      valTest = valTest.join('').slice(0, i + 2);
-      if (valTest[valTest.length-1] === '0') {
-        valTest = valTest.slice(0, -1);
-      }
-      return val.join('') + valTest;
-    } else {
-      return val.join('');
-    }
-  }
+	// +/- change
+	$("[value='+/-']").click(function(){
+		num *= -1;
+		answer.text(num);
+	});
 
-  $('button').click(function() {
+	// % operation
+	$("[value='%']").click(function(){
+		num *= 0.01;
+		answer.text(num);
+	});
 
-    entry = $(this).attr("value");
-    console.log('entry: ' + entry);
+	// number entry
+	$(".numBtn,#zeroBtn").click(function(){
+		// prevent extra 0 at the start
+		if($(this).text()==="0"){
+			(num==="0")?num=num:num+="0";
+		}else{
+		num += $(this).text();	
+		}
+		//prevent number input length>9	
+		if(num.length>9){
+			num="";
+			answer.html("<div style='font-size:20px;'>Digit Limit Met</div>");
+		}else{
+			answer.text(num);
+		}		
+	});	
 
-    //reset log
-    if (reset) {
-      if (entry === '/' || entry === '*' || entry === '-' || entry === '+') {
-        log = answer;
-      } else {
-        answer = '';
-      }
-    }
-    reset = false;
+	// prevent extra dot || input is 0. if the initial entry is a dot
+	$("#dotBtn").click(function(){	
+		if(num===""){
+			num += "0.";
+		}			
+		(num.indexOf(".")===-1)?num+=$(this).text():num=num;
+		answer.text(num);
+	});
 
-    // clear
-    if (entry === 'ac' || entry === 'ce' && current === 'noChange') {
-      answer = '';
-      current = '';
-      entry = '';
-      log = '';
-      $('#history').html('0');
-      $('#answer').html('0');
-      decimal = true;
-    } else if (entry === 'ce') {
-      $('#history').html(log.slice(0, -current.length));
-      log = log.slice(0, -current.length);
-      answer = answer.slice(0, -current.length);
-      current = answer;
-      if (log.length === 0 || log === ' ') {
-        $('#history').html('0');
-      }
-      $('#answer').html('0');
-      entry = '';
-      decimal = true;
-    }
+	// operator entry
+	$(".operators").click(function(){
+		operator = $(this).attr("value");		
+		num2 = num;
+		num ="";			
+	});
 
-    // prevent more than one deciminal in a number
-    if (entry === '.' || entry === '0.') {
-      if (!decimal) {
-        entry = '';
-      }
-    }
-
-    // prevent improper use of first digit
-    if (answer.length === 0 && isNaN(entry) && entry !== '.' || answer.length === 0 && entry === '0') {
-      entry = '';
-      answer = '';
-    }
-
-    // prevent extra operators
-    if (current !== 'noChange') {
-      if (current === '' && isNaN(entry) && entry !== '.' || isNaN(current) && isNaN(entry) && entry !== '.') {
-        entry = '';
-      }
-    }
-
-    // digit string concatenation
-    while (Number(entry) || entry === '0' || current === '.') {
-
-      if (isNaN(current) && entry === '0' && current !== '.') {
-        entry = '';
-      } else if (isNaN(current) && Number(entry) && current !== '.') {
-        current = '';
-      }
-      if (entry === '.') {
-        decimal = false;
-      }
-      if (current === '0.' && isNaN(entry)) {
-        entry = '';
-      } else {
-        if (current[current.length - 1] === '.') {
-          current = current.concat(entry);
-        } else {
-          current += entry;
-        }
-        answer += entry;
-        $('#answer').html(current);
-        log += entry;
-        $('#history').html(log);
-        entry = '';
-      }
-    }
-
-    // Operations
-
-    if (entry === '.') {
-      if (current === '' || isNaN(current[current.length - 1])) {
-        current = '0.';
-        answer += entry;
-        $('#answer').html('0.');
-        log += current;
-        $('#history').html(log);
-
-      } else {
-        current = current.concat('.');
-        answer = answer.concat('.');
-        log = answer;
-        $('#history').html(answer);
-        $('#answer').html(current);
-      }
-      entry = '';
-      decimal = false;
-
-    } else if (entry === '/') {
-      current = '/';
-      answer = round(eval(answer)) + current;
-      log += current;
-      $('#history').html(log);
-      $('#answer').html('/');
-      entry = '';
-      decimal = true;
-
-    } else if (entry === '*') {
-      current = '*';
-      answer = round(eval(answer)) + current;
-      log += 'x';
-      $('#history').html(log);
-      $('#answer').html('x');
-      entry = '';
-      decimal = true;
-
-    } else if (entry === '-') {
-      current = '-';
-      answer = round(eval(answer)) + current;
-      log += current;
-      $('#history').html(log);
-      $('#answer').html('-');
-      entry = '';
-      decimal = true;
-
-    } else if (entry === '+') {
-      current = '+';
-      answer = round(eval(answer)) + current;
-      log += current;
-      $('#history').html(log);
-      $('#answer').html('+');
-      entry = '';
-      decimal = true;
-
-    }else if (entry === '=') {
-      if (current[current.length - 1] === '.') {
-        entry = '';
-      } else {
-        current = eval(answer).toString();
-        $('#answer').html(round(eval(answer)));
-        answer = round(eval(answer));
-        log += entry + answer;
-        $('#history').html(log);
-        log = answer;
-        entry = '';
-        reset = true;
-        decimal = true;
-      }
-      current = 'noChange';
-    }
-    entry = '';
-
-    if (reset) {
-      log = '';
-    }
-
-    // limit number of digits
-    if ($('#entry').children().text().length > 18 || $('#history').text().length > 22) {
-      $('#answer').html('0');
-      $('#history').html('Digit Limit Met');
-      current = '';
-      answer = '';
-      log = '';
-      decimal = true;
-    }
-
-    //console.log('decimal: ' + decimal);
-    //console.log('current: ' + current);
-    //console.log('answer: ' + answer);
-    //console.log($('#history').text().length);
-  });
+	// calculation
+	$("#equalBtn").click(function(){		
+		if(operator === "+"){
+			num = (parseFloat(num2) + parseFloat(num));
+		}
+		else if(operator === "-"){
+			num = (parseFloat(num2) - parseFloat(num));
+		}
+		else if(operator === "*"){
+			num = (parseFloat(num2) * parseFloat(num));
+		}
+		else if(operator === "/"){
+			num = (parseFloat(num2) / parseFloat(num));
+		}		
+		num = num.toFixed(2);
+		if(num.length>9){
+			var roundNum = parseFloat(num);
+			num = roundNum.toPrecision(3);
+		}
+		answer.text(num);
+		num="";
+		num2="";
+	});
 });
