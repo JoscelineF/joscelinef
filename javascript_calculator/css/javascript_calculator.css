@@ -59,7 +59,11 @@ button{
 .red {  
   background-color: #a72d45;
   box-shadow: 0px 4px 3px 0px #671c2a; 
+  font-size:20px;
  /* width: 95px; */
+}
+.row1{
+  font-size:20px;
 }
 .numBtn{
   background-color:#888;
