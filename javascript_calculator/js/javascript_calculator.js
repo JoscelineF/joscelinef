@@ -1,10 +1,9 @@
 $(function(){
 	var num ="";
-	var num2 ="";
+	var num2 =""; // for saving the first number input
 	var operator ="";
 	var answer = $('#answer');
-	var eqBtn = false;
-
+	
 	// clear button
 	$("[value='ac']").click(function(){
 		num ="";
