@@ -1,9 +1,10 @@
 $(function(){
 	var num ="";
-	var num2 =""; // for saving the first number input
+	var num2 ="";
 	var operator ="";
 	var answer = $('#answer');
-	
+	var eqBtn = false;
+
 	// clear button
 	$("[value='ac']").click(function(){
 		num ="";
@@ -72,13 +73,27 @@ $(function(){
 
 	// operator entry
 	$(".operators").click(function(){
+		// for sequential calculations
+		if(num!==""&&operator!==""){
+			calc();
+			num = answer.text();
+			num2= num;
+			operator = $(this).attr("value");
+			num = "";
+			console.log("num: " + num);
+			console.log("num2: " + num2);
+			console.log("op: " + operator);	
+		}else{
 		operator = $(this).attr("value");		
 		num2 = num;
-		num ="";			
+		num ="";					
+		}
 	});
 
 	// calculation
-	$("#equalBtn").click(function(){		
+	$("#equalBtn").click(calc);
+
+	function calc(){		
 		if(operator === "+"){
 			num = (parseFloat(num2) + parseFloat(num));
 		}
@@ -99,5 +114,5 @@ $(function(){
 		answer.text(num);
 		num="";
 		num2="";
-	});
+	}
 });
