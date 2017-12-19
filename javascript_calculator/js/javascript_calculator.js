@@ -3,7 +3,7 @@ $(function(){
 	var num2 ="";
 	var operator ="";
 	var answer = $('#answer');
-	var eqBtn = false;
+	//var eqBtn = false;
 
 	$(document.body).on("touchstart click", "button", function(event){
 		// prevent conflict of touchstart & click events
