@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Clock</title>
+  <link href='https://fonts.font.im/css?family=Alegreya+Sans+SC:400,500,700,800,300,900' rel='stylesheet' type='text/css'>
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container text-center">
+  <h1>Pomodoro Clock</h1>
+  <div id="pomo">
+    <!-- break & session setting -->
+    <div class="control">
+      <div class="break lead">
+        <p>Break Length</p>
+        <i class="fa fa-caret-left fa-2x text-muted" aria-h text-mutedidden="true" id="break-minus"></i>
+        <span id="break-length">5</span>
+        <i class="fa fa-caret-right fa-2x text-muted" aria-hidden="true" id="break-plus"></i>
+      </div>
+      <div class="session lead">
+        <p>Session Length</p>
+        <i class="fa fa-caret-left fa-2x text-muted" aria-hidden="true" id="break-minus"></i>
+        <span id="session-length">25</span>
+        <i class="fa fa-caret-right fa-2x text-muted" aria-hidden="true" id="break-plus"></i>
+      </div>
+    </div>
+    <!-- Clock Timer -->
+    <div class="clock">
+      <!-- <h2 id="clock-text">Session</h2>-->
+      <h2 id="time">25:00</h2>
+      <span id="per"></span>
+    </div>
+    <div class="buttons">
+      <button type="button" class="btn btn-success">Start</button>
+      <button type="button" class="btn btn-danger">Stop</button>
+      <button type="button" class="btn btn-info">Reset</button>
+    </div>
+  </div>
+  <div class="footer small">by Josceline</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+</body>
+</html>
