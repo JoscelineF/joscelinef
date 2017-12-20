@@ -4,62 +4,97 @@
 body{
   height: 100vh;  
   color:#fff;
-  background-color: #333;
+  background-color: #CF4C4C;
   font-family: 'Alegreya Sans SC', sans-serif;
 }
 h1{
-  margin:20px auto;
-  font-family: courier, monospace;
+  margin:30px auto;
+  font-family: 'Fredericka the Great', cursive;
 }
 .footer{
-  margin:5% auto;
+  margin:20px auto;
 }
 .control{
-  width:100%;
+  width:450px;
   display: flex;
   text-align: center;
-  justify-content:space-around;
-  margin: 20px auto 10px;
+  justify-content:space-between;
+  margin: 20px auto 0;
 }
 .control p{
   margin:0;
   padding:0;
+  font-weight:400;
+  color:#6FDEAA;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  position:relative;
+  top:5px;
+}
+.control i{
+  cursor:pointer;
+  position:relative;
+  top:5px;
 }
 .control span{
-  font-size: 1.8em;
-  margin: 0 15px;
+  font-size: 1.6em;
+  margin: 0 10px;
+  font-family: 'Fredericka the Great', cursive;
+  position:relative;
+  top:10px;
 }
-.break{
-  display:inine;  
+.break,.work{  
+  display:inline;  
+  height: 120px;
+  width:120px;
+  border:2px dotted #6FDEAA;
+  border-radius:50%;
+  padding:5px;
 }
-.session{
-  display:inine;
-}
-i:hover, i:active{
-  font-size: 230%;    
+
+i:hover, i:active{  
+  color: #aaa;
+  
 }
 .clock{
-  width:250px;
-  height:250px;
+  width:280px;
+  height:280px;
   margin: 0 auto 30px;
-  border: 4px solid #e74c3c;
+  border: 4px solid #6FDEAA;
   border-radius:50%;
   text-align:center;
   cursor: pointer;
   z-index:10;
   overflow:hidden;
+  position:relative;
+  top:-35px;
 }
 #time{
   font-size:5.5em;
   z-index:20;
-  margin-top:25%;
+  margin-top:30%;
+  font-family: 'Fredericka the Great', cursive;
 }
-.buttons{
+
+@media only screen and (max-width: 700px) {
+  .control{
   width:100%;
-  margin: 0 auto;
-  
+  }
+  .buttons{
+  width:100%;
+  margin: 0 auto;  
+  }
+}
+#fillPerc{
+  z-index:-1;
+  width:100%;
+}
+/*
+.buttons{
+  width:450px;
+  margin: 0 auto;  
 }
 button{
   width: 80px;
   margin: 0 10px;
 }
+*/
