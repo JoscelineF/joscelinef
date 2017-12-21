@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" >
+
 <head>
   <meta charset="UTF-8">
   <title>Pomodoro Clock</title>
   <link href='https://fonts.font.im/css?family=Alegreya+Sans+SC:400,500,700,800,300,900' rel='stylesheet' type='text/css'>
-<link href='https://fonts.font.im/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
-  
+  <link href='https://fonts.font.im/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>  
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-
-      <link rel="stylesheet" href="css/style.css">
-
-  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+  <link rel="stylesheet" href="css/pomodoro_clock.css">  
 </head>
 
 <body>
-  <div class="container text-center">
-  <h1>Pomodoro Clock</h1>
-  <div id="pomo">
-    <!-- break & session setting -->
-    <div class="control">
-      <div class="break lead">
-        <p>Break</p>
-        <i class="fa fa-chevron-left fa-lg" aria-h text-mutedidden="true" id="break-minus"></i>
-        <span id="break-length">5</span>
-        <i class="fa fa-chevron-right fa-lg" aria-hidden="true" id="break-plus"></i>
+    <div class="container text-center">
+    <h1>Pomodoro Clock</h1>
+    <div id="pomo">
+      <!-- break & session setting -->
+      <div class="control">
+        <div class="break lead">
+          <p>Break</p>
+          <i class="fa fa-chevron-left fa-lg" aria-h text-mutedidden="true" id="break-minus"></i>
+          <span id="breakLen">5</span>
+          <i class="fa fa-chevron-right fa-lg" aria-hidden="true" id="break-plus"></i>
+        </div>
+        <div class="work lead">
+          <p>Work</p>
+          <i class="fa fa-chevron-left fa-lg" aria-hidden="true" id="work-minus"></i>
+          <span id="workLen">25</span>
+          <i class="fa fa-chevron-right fa-lg" aria-hidden="true" id="work-plus"></i>
+        </div>
       </div>
-      <div class="work lead">
-        <p>Work</p>
-        <i class="fa fa-chevron-left fa-lg" aria-hidden="true" id="work-minus"></i>
-        <span id="work-length">25</span>
-        <i class="fa fa-chevron-right fa-lg" aria-hidden="true" id="work-plus"></i>
+      <!-- Clock Timer -->
+      <div class="clock">
+        <h4 id="status-text">&nbsp;</h4>
+        <h2 id="time">25:00</h2>
+        <span id="fillPerc"></span>
+        
+        <p id="clockInd">Click to start / pause</p>
       </div>
+      <!--
+      <div class="buttons">
+        <button type="button" class="btn btn-success">Start</button>
+        <button type="button" class="btn btn-danger">Stop</button>
+        <button type="button" class="btn btn-info">Reset</button>
+      </div>  -->
     </div>
-    <!-- Clock Timer -->
-    <div class="clock">
-      <!-- <h2 id="clock-text">Session</h2>-->
-      <h2 id="time">25:00</h2>
-      <span id="fillPerc"></span>
-    </div>
-    <!--
-    <div class="buttons">
-      <button type="button" class="btn btn-success">Start</button>
-      <button type="button" class="btn btn-danger">Stop</button>
-      <button type="button" class="btn btn-info">Reset</button>
-    </div>  -->
+    <div class="footer small">by&nbsp;&nbsp;Josceline</div>
   </div>
-  <div class="footer small">by&nbsp;&nbsp;Josceline</div>
-</div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-
-    <script  src="js/index.js"></script>
-
+  <script  src="js/pomodoro_clock.js"></script>
 </body>
 </html>
