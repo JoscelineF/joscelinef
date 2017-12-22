@@ -1,6 +1,6 @@
 $(function(){
   // default time length
-  var workLen = 25
+  var workLen = 25;
   var breakLen = 5;
   var status = 1; // indicates the clock status, 1 is work pause, 2 is break pause,  3 is working, 4 is in break
   var sec = workLen * 60;// record remaining time in seconds
@@ -148,7 +148,8 @@ $(function(){
       $(document.body).css('background-color','#CF4C4C');
       $('.break,.work').css('border','3px dotted #6FDEAA');
       $('.control p').css('color','#6FDEAA');
-      $('.clock').addClass("clockWork");
+      $('.clock').removeClass("clockBreak").addClass("clockWork");
+     
       if(sec===0){
         perc = 100;
       }else{
@@ -162,7 +163,7 @@ $(function(){
       $(document.body).css('background-color','#6FDEAA');
       $('.break,.work').css('border','3px dotted #CF4C4C');
       $('.control p').css('color','#CF4C4C');
-      $('.clock').addClass("clockBreak");
+      $('.clock').removeClass("clockWork").addClass("clockBreak");
       if(sec===0){
         perc = 100;
       }else{
