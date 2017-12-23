@@ -1,0 +1,30 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+ul{
+  list-style:none;
+  width:460px;
+  height:460px;
+  margin:20px auto;
+  padding:0;
+}
+@media only screen and (max-width:500px){
+  ul{
+  list-style:none;
+  width:94vw;
+  height:94vw;
+  margin:20px auto;
+  padding:0;
+}
+}
+.grid{
+  display:inline-block;
+  border:1px solid black;
+  width:32.5%;
+  height:32.5%;
+  flow:left;
+  margin:0;
+  padding:0;
+}
