@@ -1,10 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link href='https://fonts.font.im/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='https://fonts.font.im/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
   
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
 
@@ -16,19 +19,35 @@
 <body>
 
   <div class="container text-center">
-  <h1 class="header">Tic Tac Toe</h1>
+  <h1 class="header">TIC TAC TOE</h1>
   <div class="board-container">
-    <ul class="grids">
-      <li class="grid grid0"></li>
-      <li class="grid grid1"></li>
-      <li class="grid grid2"></li>
-      <li class="grid grid3"></li>
-      <li class="grid grid4"></li>
-      <li class="grid grid5"></li>
-      <li class="grid grid6"></li>
-      <li class="grid grid7"></li>
-      <li class="grid grid8"></li>
-    </ul>
+<!--  <div id="panel">Reset All</div> -->
+    <div class="grids">
+      <div id="choose-panel"><p>Would you like to be X or O?</p>
+        <span class="choose-x">X</span>
+        <span class="choose-o">O</span> 
+      </div>
+      <div class="grid grid0-0"></div>
+      <div class="grid grid0-1"></div>
+      <div class="grid grid0-2"></div>
+      <div class="grid grid1-0"></div>
+      <div class="grid grid1-1"></div>
+      <div class="grid grid1-2"></div>
+      <div class="grid grid2-0"></div>
+      <div class="grid grid2-1"></div>
+      <div class="grid grid2-2"></div>
+      <div id="result-panel">
+        <div class="drawMsg">
+          <p>draw...</p>
+        </div>
+        <div class="loseMsg">
+          <p>Pity... <br/>you lost...</p>
+        </div>
+        <div class="winMsg">
+          <p>You Won!!! XD</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div id="footer"></div>
 </div>
@@ -36,6 +55,11 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 
   
+
+    <script  src="js/index.js"></script>
+
+
+
 
 </body>
 
