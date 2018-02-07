@@ -1,0 +1,106 @@
+// define variables
+$redBase: #ff0000;
+$orangeBase: saturate(lighten(adjust-hue($redBase,39),5),7);
+$yellowBase: saturate(lighten(adjust-hue($redBase,64),6),13);
+$greenBase: desaturate(darken(adjust-hue($redBase,102),2),11);
+$blueBase: saturate(darken(adjust-hue($redBase,201),2),1);
+$purpleBase: saturate(darken(adjust-hue($redBase,296),2),1);
+$blackBase: #666;
+$bgcolor: #fff;
+
+//create lighten mixin
+@mixin swatchLighten($color) {
+  @for $i from 1 through 10 {
+    $j: 11-$i;
+    li:nth-child(#{$j}) {
+      $n:$i*5;
+      $bgcolor: lighten($color,$n);
+      background-color: $bgcolor;      
+      &:hover:before {   //show the color no. when hover
+        content: "#{$bgcolor}";
+        color: darken($bgcolor,40);
+        font-family: Helvetica, serif;
+        font-size: 9px;
+        padding:3px; 
+      }
+    }
+  }
+}
+
+// create darken mixin
+@mixin swatchDarken($color) {
+  @for $i from 1 through 10 {
+    $j: $i+11;
+    li:nth-child(#{$j}) {
+      $n:$i*5;
+      $bgcolor: darken($color,$n);
+      background-color: $bgcolor;      
+      &:hover:before {   //show the color no. when hover
+        content: "#{$bgcolor}";
+        color: lighten($bgcolor,40);
+        font-family: Helvetica, serif;
+        font-size: 9px;
+        padding:3px;        
+      }
+    }
+  }
+  li:nth-child(11) {
+    background-color: $color;
+    &:hover:before {
+      content: "#{$color}";
+        color: #fff;
+        font-family: Helvetica, serif;
+        font-size: 9px;
+        padding:3px;  
+    }
+  }
+}
+
+.swatches li{
+  width: (100%/21);
+  float:left;
+  height:60px;
+  list-style:none outside none;
+}
+
+ul.red {
+  @include swatchLighten($redBase);
+  @include swatchDarken($redBase);  
+}
+ul.orange {
+  @include swatchLighten($orangeBase);
+  @include swatchDarken($orangeBase);  
+}
+ul.yellow {
+  @include swatchLighten($yellowBase);
+  @include swatchDarken($yellowBase);  
+}
+ul.green {
+  @include swatchLighten($greenBase);
+  @include swatchDarken($greenBase);  
+}
+ul.blue {
+  @include swatchLighten($blueBase);
+  @include swatchDarken($blueBase);  
+}
+ul.purple {
+  @include swatchLighten($purpleBase);
+  @include swatchDarken($purpleBase);  
+}
+ul.black {
+  @include swatchLighten($blackBase);
+  @include swatchDarken($blackBase);  
+}
+
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #aaa;
+}
+
+ul{
+  
+  padding:10px;
+  
+}
